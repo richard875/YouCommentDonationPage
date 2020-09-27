@@ -1,0 +1,401 @@
+<html>
+  <head>
+    <title>Thank you for supporting!</title>
+    <style>
+      @font-face {
+        font-family: YouFont;
+        src: url("src/YouFont.otf");
+      }
+      .logo {
+        margin-top: 3vh;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 12vh;
+        width: 12vh;
+      }
+      .logoText {
+        margin-top: 4vh;
+        font-family: YouFont;
+        font-size: 4vh;
+        letter-spacing: -0.1vw;
+        text-align: center;
+      }
+      .serviceGrid {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -1.5vw;
+        width: 85%;
+        height: 62vh;
+        /* background-color: antiquewhite; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .bottomText {
+        position: absolute;
+        bottom: 0.5vw;
+        left: 1vw;
+        font-family: YouFont;
+        font-size: 2vh;
+      }
+      .card {
+        width: 20vw;
+        height: 90%;
+        background-color: #e7e7e7;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        -webkit-box-shadow: 0px 0px 94px -23px rgba(214, 214, 214, 1);
+        -moz-box-shadow: 0px 0px 94px -23px rgba(214, 214, 214, 1);
+        box-shadow: 0px 0px 94px -23px rgba(214, 214, 214, 1);
+      }
+      .icon {
+        margin-top: 3vh;
+        height: 7vh;
+      }
+      .qrCode {
+        position: absolute;
+        height: 25vh;
+        top: 43%;
+      }
+      .ethInput {
+        width: 80%;
+        height: 3vh;
+      }
+      .inputBox {
+        position: absolute;
+        width: 15%;
+        height: 5vh;
+        top: 73%;
+        display: flex;
+      }
+      .ethInput {
+        flex: 0.75;
+        height: 100%;
+        font-size: 2vh;
+        font-family: YouFont;
+        border: none;
+        outline: none;
+        border-radius: 30px 0px 0px 30px;
+      }
+      .copy {
+        flex: 0.25;
+        height: 100%;
+        background-color: #f2c477;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2vh;
+        font-family: YouFont;
+        border-radius: 0px 30px 30px 0px;
+        cursor: pointer;
+      }
+
+      .tAc:hover {
+        color: #727272;
+        cursor: pointer;
+      }
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        font-family: YouFont;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      @keyframes animatetop {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 0;
+          opacity: 1;
+        }
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .notification {
+        position: absolute;
+        top: 2vh;
+        right: 2vh;
+        height: 95vh;
+        width: 16vw;
+        /* background-color: #f2c477; */
+      }
+
+      .eachNotification {
+        width: 100%;
+        height: 4.5vw;
+        /* background-color: #938999; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .notInside {
+        padding-top: 0.5vh;
+        height: 70%;
+        width: 95%;
+        background-color: #f2c477;
+        font-family: YouFont;
+        font-size: 2vh;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: 0px 0px 7px 4px rgba(171, 171, 171, 0.42);
+        -moz-box-shadow: 0px 0px 7px 4px rgba(171, 171, 171, 0.42);
+        box-shadow: 0px 0px 7px 4px rgba(171, 171, 171, 0.42);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+        }
+        .logoText {
+          margin-top: 4vh;
+          font-family: YouFont;
+          font-size: 4vh;
+          letter-spacing: -0.1vw;
+          text-align: center;
+          color: white;
+        }
+        .bottomText {
+          position: absolute;
+          bottom: 0.5vw;
+          left: 1vw;
+          font-family: YouFont;
+          font-size: 2vh;
+          color: white;
+        }
+        .card {
+          width: 20vw;
+          height: 90%;
+          background-color: #363636;
+          border-radius: 20px;
+          -webkit-box-shadow: 0px 0px 7px 4px rgba(31, 31, 31, 1);
+          -moz-box-shadow: 0px 0px 7px 4px rgba(31, 31, 31, 1);
+          box-shadow: 0px 0px 7px 4px rgba(31, 31, 31, 1);
+        }
+        .ethInput {
+          width: 80%;
+          height: 5vh;
+          background-color: #686868;
+          color: white;
+        }
+        .modal-content {
+          background-color: #212121;
+          border: 1px solid #212121;
+        }
+        .modal {
+          color: white;
+        }
+        .close:hover,
+        .close:focus {
+          color: white;
+        }
+        .notInside {
+          -webkit-box-shadow: 0px 0px 46px -8px rgba(171, 171, 171, 0.6);
+          -moz-box-shadow: 0px 0px 46px -8px rgba(171, 171, 171, 0.6);
+          box-shadow: 0px 0px 46px -8px rgba(171, 171, 171, 0.6);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="src/YouComment.png" />
+    <p class="logoText">
+      Thank you very much for your support, It will really help us to keep the
+      software running.
+    </p>
+    <div class="serviceGrid">
+      <div class="card">
+        <img
+          class="icon"
+          src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
+        />
+        <img
+          class="qrCode"
+          src="https://www.bitcoinqrcodemaker.com/api/?style=ethereum&amp;address=0x1e0f92b39a89f4b5e45454a903b9b9AF28401791"
+          border="0"
+        />
+        <div class="inputBox">
+          <input
+            class="ethInput"
+            type="text"
+            id="ethereumToCopy"
+            value="0x1e0f92b39a89f4b5e45454a903b9b9AF28401791"
+            readonly
+          />
+          <div class="copy" id="copyEth">COPY</div>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          class="icon"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
+        />
+        <img
+          class="qrCode"
+          src="https://www.bitcoinqrcodemaker.com/api/?style=bitcoin&amp;address=1NWtRkh2wE6aNTJQsDiJfFeqmykYDzv8VF"
+          border="0"
+        />
+        <div class="inputBox">
+          <input
+            class="ethInput"
+            type="text"
+            id="bitcoinToCopy"
+            value="1NWtRkh2wE6aNTJQsDiJfFeqmykYDzv8VF"
+            readonly
+          />
+          <div class="copy" id="copyBitcoin">COPY</div>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          class="icon"
+          src="https://1000logos.net/wp-content/uploads/2017/05/Paypal-Logo.png"
+        />
+        <img
+          class="qrCode"
+          style="height: 20vh; top: 42%"
+          src="src/paypal.png"
+        />
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          target="_top"
+          class="qrCode"
+          style="top: 65%"
+        >
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="NNAGN6NUVQC2J" />
+          <input
+            type="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Donate with PayPal button"
+          />
+          <img alt="" border="0" src="" width="1" height="1" />
+        </form>
+        <div class="inputBox">
+          <input
+            class="ethInput"
+            type="text"
+            id="paypalToCopy"
+            value="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NNAGN6NUVQC2J&source=url"
+            readonly
+          />
+          <div class="copy" style="cursor: pointer" id="copyPaypal">SHARE</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomText">
+      <div>YouComment&#8482</div>
+      <div class="tAc" style="cursor: pointer" id="tAndC">
+        Terms and Conditions
+      </div>
+      <a
+        style="color: inherit; text-decoration: none"
+        href="mailto:richard_875@me.com"
+        target="_blank"
+        style="cursor: pointer"
+        ><div class="tAc">Contact me</div></a
+      >
+      <div>2020 A Richard Lee's production</div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1 style="font-size: 2vw">Terms and Conditions</h1>
+        <h3 style="font-size: 1vw">
+          A long black shadow slid across the pavement near their feet and the
+          five Venusians, very much startled, looked overhead. They were barely
+          in time to see the huge gray form of the carnivore before it vanished
+          behind a sign atop a nearby building which bore the mystifying
+          information "Pepsi-Cola." Do you think you're living an ordinary life?
+          You are so mistaken it's difficult to even explain. The mere fact that
+          you exist makes you extraordinary. The odds of you existing are less
+          than winning the lottery, but here you are. Are you going to let this
+          extraordinary opportunity pass? There was something special about this
+          little creature. Donna couldn't quite pinpoint what it was, but she
+          knew with all her heart that it was true. It wasn't a matter of if she
+          was going to try and save it, but a matter of how she was going to
+          save it. She went back to the car to get a blanket and when she
+          returned the creature was gone. He had done everything right. There
+          had been no mistakes throughout the entire process. It had been
+          perfection and he knew it without a doubt, but the results still
+          stared back at him with the fact that he had lost. Hopes and dreams
+          were dashed that day. It should have been expected, but it still came
+          as a shock. The warning signs had been ignored in favor of the
+          possibility, however remote, that it could actually happen. That
+          possibility had grown from hope to an undeniable belief it must be
+          destiny. That was until it wasn't and the hopes and dreams came
+          crashing down.
+        </h3>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./donate.js"></script>
+  </body>
+</html>
